@@ -3,13 +3,16 @@ package main
 import (
 	"fmt"
 	"net/http"
-
+	"context"
+	"log"
+	"time"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
+
 
 func index(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "API esta funcionando")

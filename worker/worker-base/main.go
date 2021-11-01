@@ -19,12 +19,24 @@ import (
 var ctx = context.Background()
 
 type Juego struct {
-	ID      primitive.ObjectID `bson:"_id"`
-	Mensaje string             `bson:"text"`
+	ID             primitive.ObjectID `bson:"_id"`
+	Mensaje        string             `bson:"text"`
+	Request_Number string             `bson:"request_number"`
+	Game           int                `bson:"game"`
+	GameName       string             `bson:"gamename"`
+	Winner         string             `bson:"winner"`
+	Players        int                `bson:"players"`
+	Worker         string             `bson:"worker"`
 }
 
 type JuegoRedis struct {
-	Mensaje string
+	Mensaje        string
+	request_number string
+	game           int
+	gameName       string
+	winner         string
+	players        int
+	worker         string
 }
 
 const MongoDb = "mongodb://grupo33:pass%2B1234@34.125.72.176:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
@@ -79,6 +91,7 @@ func (ac JuegoRedis) MarshalBinary() ([]byte, error) {
 
 func index(w http.ResponseWriter, r *http.Request) {
 	GuardarRedis(`{Mensaje: "hola"}`)
+	GuardarMongo(`{Mensaje: "hola"}`)
 	fmt.Fprintf(w, "API esta funcionando")
 }
 

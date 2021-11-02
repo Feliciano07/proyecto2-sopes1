@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "artful-palace-330303",
+    "private_key_id": "e7d7deb9d635deb16a2e12c76e669ad568fd940b",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDB4e3tU1KPOIzj\nNiXpoamw9DL/KnritAxh/Ztr9SYd2chfHYNhxphLO2hD6V4R25N0YOBw/Q2jxWtt\nxR6gqrq0sKblFfUwM9vErIHeHBz2cv909rsOes8i0sp0m3C6xZBTUhgkCI6lZXTK\nhSKPca7Q0B422qVRZACOg2zajmN4p2fQeplPTe4pOwx3ZdDIXBpkcs3y4XpmAedW\naReh6KScaw7nDMdJMxcx3L7sfZCUbxz40t06AG4u6ghhIncIdG5vbFfpqewlEaB7\n9mFOaiGSSyS3LMVEIeZCm3MCbt2RFwvDMXOmGfvUZFzCTN8Zi6+5YvwJF5n0eKH3\niBpu0QZpAgMBAAECggEAEplImIx2g4cHu4tyuJue/9Af4kAiI1mP7zMuXn1ZB40K\n6SuXcmDkNCIB9F3Qfdhj/UqGd/WhLNWKjYWsKfp8HaBClQBLEdwvrV66YzhW2OzF\nhQ60JAVI6zdwX3OX1/rix54SSHFKXyMWleTj9gG6+jdfZqCz3NUXLpSnSRIBXc36\nc2lcpmcOk3W54tHqqry3Fcj9MwUtf76vDrE7XOeksrXLRKo4Ec5BeTNwUKabzJWS\nsPhJAzrbfhp7NLm5RpBY6NJ9zKUlVpGNa1Rg9NUMXq4gsdmkAtS2/QqatjtHiH/T\nRfRS9NxwOwJ6Z6XuXoEAg0N9LZYon4G1fXh1dmdNRwKBgQDxTGgtHskVPmk4/NxC\n8UxsgkZpvQPO77HuzWH56Gpsm5SveDWOPRSfAXp50C6VrO9WgHYJ3gz0nYiBr+LD\nmWwYJn3gpCe37rarNdhqFdw21UG5+YBFOk1ZnRZ9fx6/yBTHgxwgJSnv5jkj6PoA\nFFLwheY+Gq3oY6zZwC13cLzFQwKBgQDNsfbaR2bmDH1U3xcCWO3SK/tyVUXYKY3y\nrvQY/Ru/LC1pp8ZNCHfWrL8TuGexQRhcwl2LtHRdc8rJ0xHWJ/wU10W7ElNln8bw\n+dfVjOmYvUZAQB7OkXBpoyPn93XcHOCkILfX6upzXjxEUe31n2ZTUq3B8+V3mAtT\naQqVdym04wKBgGherzTM+xcIPsUagj8mVfMdSk2UJyCMBv+OsJFC2T2O8foP2cJj\nYxb/sbUcufmdqoxU1jmgZSQtO400wbXvF5U+mPXgqxlg1Hwrtybzu6OwDFTfuX64\nIBrh2od/w5IaffpqGHFDAee1QgPpUrFUGSfWEufL7Gr3Kh2phUEDb3M3AoGAUUsN\nYXUosLCs89b7c/0LeK3TQXt8EBNUO15zsFCQH7zo8cHR+G3pVtmM5tFRgddVNovG\nhsk52BlEQwF9IiNJWD9AGtACT76W1HQZnheD1s6vLgNpaYBHaiiEr0+4r9Zl3dfk\ncJwyLohGz0WGAzYNLc8WRvoKbXqUt1FjUnD29bsCgYEAkxE65dKVLPOKJIksb2cZ\nnDvFopt2UaCz8M3RlXfXrvBkNtipgfDEI55mNhQRv6yj/GYVHKb89EEt4Tobj3p0\nJzRS8u6QDnQLF+61e/PzRN863NhDVMB/pWRGeVCoadrevQO2JIigflZPNInyAJSM\n3v6Ppi6mYzeND5Hd3lCNo3E=\n-----END PRIVATE KEY-----\n",
+    "client_email": "pubsub-fernando@artful-palace-330303.iam.gserviceaccount.com",
+    "client_id": "104277161676349104112",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pubsub-fernando%40artful-palace-330303.iam.gserviceaccount.com"
+  }
+  

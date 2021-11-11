@@ -18,7 +18,7 @@ import (
 
 var ctx = context.Background()
 
-type Juego struct {
+type DataMongo struct {
 	ID             primitive.ObjectID `bson:"_id"`
 	Mensaje        string             `bson:"text"`
 	Request_Number string             `bson:"request_number"`
@@ -29,7 +29,7 @@ type Juego struct {
 	Worker         string             `bson:"worker"`
 }
 
-type JuegoRedis struct {
+type DataRedis struct {
 	Mensaje        string
 	request_number string
 	game           int
@@ -52,7 +52,7 @@ func GuardarMongo(mensaje string) {
 	Database := mongoclient.Database("db_sopes")
 	Collection := Database.Collection("data")
 
-	juego := &Juego{
+	juego := &DataMongo{
 		ID:      primitive.NewObjectID(),
 		Mensaje: "hola",
 	}
@@ -73,7 +73,7 @@ func GuardarRedis(mensaje string) {
 	})
 	defer client.Close()
 
-	game := JuegoRedis{
+	game := DataRedis{
 		Mensaje: "hola",
 	}
 
@@ -85,7 +85,7 @@ func GuardarRedis(mensaje string) {
 	fmt.Println(val)
 }
 
-func (ac JuegoRedis) MarshalBinary() ([]byte, error) {
+func (ac DataRedis) MarshalBinary() ([]byte, error) {
 	return json.Marshal(ac)
 }
 

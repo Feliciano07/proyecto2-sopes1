@@ -1,7 +1,11 @@
 const express = require('express');
 const {response,request} = require('express');
-const router = express.Router();
+const redis = require('redis');
+
+
 const Juegos= require ('../models/juego');
+
+const router = express.Router();
 
 router.get('/', (req = request, res = response)=>{
     res.send("Server corriendo")
@@ -45,5 +49,8 @@ router.get('/worker', (req = request, res = response)=>{
     .exec()
     .then(x => res.status(200).send(x));
 })
+
+// REPORTES DE REDI
+
 
 module.exports = router;

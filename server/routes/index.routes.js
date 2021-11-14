@@ -3,6 +3,12 @@ const {response,request} = require('express');
 const router = express.Router();
 const Juegos= require ('../models/juego');
 
+const redis = require('redis');
+const client = redis.createClient({
+    port:6379, host:"34.125.245.149", db:1
+})
+
+
 router.get('/', (req = request, res = response)=>{
     res.send("Server corriendo")
 });
@@ -44,6 +50,13 @@ router.get('/worker', (req = request, res = response)=>{
     ])
     .exec()
     .then(x => res.status(200).send(x));
+})
+
+// REPORTE DE REDIS
+
+router.get('/prueba', (req = request, res = response) =>{
+    client.set('lista', "valores", redis.print);
+    res.status(200).send("Agregado")
 })
 
 module.exports = router;

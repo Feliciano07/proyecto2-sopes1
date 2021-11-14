@@ -55,8 +55,9 @@ router.get('/worker', (req = request, res = response)=>{
     .then(x => res.status(200).send(x));
 })
 
-// REPORTE DE REDIS
-
+/**
+ * Ultimos 10 juegos
+ */
 router.get('/lastGame', async (req=request, res= response) =>{
     await SetearDatos();
     client.get(key, (err, result)=>{
@@ -76,6 +77,9 @@ router.get('/lastGame', async (req=request, res= response) =>{
     })
 })
 
+/**
+ * Los 10 mejores jugadores
+ */
 router.get('/top-jugadores', (req = request, res=response)=>{
     Juegos.aggregate([
         {

@@ -35,7 +35,7 @@ io.on('connection', socket=>{
     }
 
     interval = setInterval(() => {
-        Juegos.find().limit(50)
+        Juegos.find()
             .exec()
             .then( x =>  socket.emit("Juegos",x) );
     }, 8000);

@@ -2,14 +2,14 @@ const express = require('express');
 const {response,request} = require('express');
 const router = express.Router();
 const Juegos= require ('../models/juego');
-const key = "lista"
+// const key = "lista"
 
-const redis = require('redis');
-const client = redis.createClient({
-    port:6379, 
-    host:"34.125.72.176",
-    db:0
-})
+// const redis = require('redis');
+// const client = redis.createClient({
+//     port:6379, 
+//     host:"34.125.72.176",
+//     db:0
+// })
 
 
 router.get('/', (req = request, res = response)=>{
@@ -59,22 +59,9 @@ router.get('/worker', (req = request, res = response)=>{
  * Ultimos 10 juegos
  */
 router.get('/lastGame', async (req=request, res= response) =>{
-    await SetearDatos();
-    client.get(key, (err, result)=>{
-        if(err){
-            return res.sendStatus(500);
-        }
-        if(!result){
-            return res.sendStatus(404);
-        }
-        const obj = JSON.parse(result);
-        if(obj.length >= 10){
-            const data = obj.slice(obj.length-10)
-            res.status(200).send(data);
-        }else{
-            res.status(200).send(obj);
-        }
-    })
+    Juegos.find().sort({_id:-1}).limit(10)
+    .exec()
+    .then(x=> res.status(200).send(x));
 })
 
 /**
@@ -92,17 +79,17 @@ router.get('/top-jugadores', (req = request, res=response)=>{
 })
 
 
-const SetearDatos = async() =>{
-    const data = await Juegos.find();
-    const json = JSON.stringify(data);
-    client.set(key,json, (err, result) =>{
-        if(err){
-            console.log(err);
-        }
-        console.log(result);
-        return true
-    })
-}
+// const SetearDatos = async() =>{
+//     const data = await Juegos.find();
+//     const json = JSON.stringify(data);
+//     client.set(key,json, (err, result) =>{
+//         if(err){
+//             console.log(err);
+//         }
+//         console.log(result);
+//         return true
+//     })
+// }
 
 
 module.exports = router;

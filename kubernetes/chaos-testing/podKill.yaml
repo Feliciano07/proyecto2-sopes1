@@ -1,0 +1,20 @@
+kind: Schedule
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  name: matand-pod
+  namespace: squidgame
+spec:
+  schedule: '@every 5s'
+  startingDeadlineSeconds: null
+  concurrencyPolicy: Forbid
+  historyLimit: 1
+  type: PodChaos
+  podChaos:
+    selector:
+      namespaces:
+        - squidgame
+      labelSelectors:
+        app: myapp-pubsub
+    mode: one
+    action: pod-kill
+    gracePeriod: 0

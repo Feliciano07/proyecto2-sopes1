@@ -8,10 +8,21 @@ interpretar las 7 pruebas de faulty traffic, usando como
 base los gráficos y métricas que muestra el tablero de
 Linkerd Grafana.**
 
+* Las metricas de oro son una forma de observar y monitorear nuestros servicios. Con estas podemos ver el desempeño, la tasa de respuesta, el porcentaje de exito de peticiones que se realizan a nuestros servicios y otros. Cada metrica muestra en tiempo real la disponibilidad de nuestros servicios. 
+
+* Las pruebas de faulty traffic nos permiten equilibrar la carga de nuestras aplicaciones, cuanto más trafico tenga nuestra aplicacion, más necesario es tener replicas de nuestro servicio para no sobrecargar 1 solo servidor.   
+Básicamente, el dashboard de linkerd nos permite profundicar en la observabilidad de nuestras pruebas de trafico. 
+
+
 
 **2. Menciona al menos 3 patrones de comportamiento que
 hayas descubierto en las pruebas de faulty traffic**
 
+* Las variaciones de las pruebas, mediante linkerd, generan graficos que evidencian la carga hacía uno u otro de los servicios de colas. 
+
+* Aunque algunas pruebas especifican que el trafico debe ir más hacia un lado, el tiempo de respuesta puede ser igual en ambos servicios. Depende de la arquitectura y herramientas que usa cada cola. 
+
+* El desempeño de cada cola esta más relacionado con su capacidad para procesar mas solicitudes al mismo tiempo, que por el porcentaje de trafico que se le envía. 
 
 **3. ¿Qué sistema de mensajería es más rápido? ¿Por qué?**
 
@@ -67,12 +78,21 @@ qué?**
 **8. ¿Cómo se reflejan en los dashboards de Linkerd los
 experimentos de Chaos Mesh?**
 
+* Facilmente se puede observar las interrupciones que se generan en las solicitudes, la disminución del volumen de solicitudes y las respuestas. 
+Las graficas y valores que linkerd muestra, son fáciles de analizar y lo suficientemente precisos para observar los problemas que pueden generar, arquitecturas mal estructuradas y servicios que puedan saturarse y colapsar. 
+
 **9. ¿En qué se diferencia cada uno de los experimentos
 realizados?**
 
+* Las pruebas se diferencian por el tiempo que un servicio esta inactivo, por la latencia que le injecta una u otra prueba. 
+Los servicios se recuperaban más rapido en algunas pruebas que en otras. 
+
+Asi mismo, la indisponibilidad de los servicios depende de que tan frecuente se ejecute la prueba. Si solo se realiza una vez, no surte mucho daño, sin embargo, si la prueba se injecta recurentemente y por un largo periodo, el daño es mayor por el tiempo total que el servicio no funciona. 
+
 **10. ¿Cuál de todos los experimentos es el más dañino?**
 
-
+- Pod kill es un experimento bastante dañino, ya que este detiene por completo un pod y para volver a estabilizarse, se debe reiniciar por completo el pod. 
+A diferencia de PodFailure que solo desabilita el pod por un X tiempo, pero no ocasiona un reinicio de este. 
 
 # Manual Tecnico
 

@@ -10,8 +10,17 @@ let socket;
 
 const GameApp = ()=>{
 
-    const ENDPOINT = 'http://localhost:8000/';
-    socket = io(ENDPOINT);
+    let direccion = process.env.REACT_APP_BACKEND_URL || "https://socket-rku52sdvga-wn.a.run.app"
+    const ENDPOINT = direccion;
+    
+    console.log(process.env.REACT_APP_BACKEND_URL)
+    console.log(direccion)
+
+    socket = io(ENDPOINT,{
+      reconnect: true,
+      secure: true,
+      transports: ['websocket', 'polling']
+    });
 
     useEffect(() => {
       return () => socket.disconnect();
